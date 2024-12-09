@@ -7,10 +7,17 @@ import LogoMeli from '../../assets/images/logoMeli.png';
 import SearchIcon from '../../assets/images/iconSearch.png';
 
 function SearchBar() {
+    //Variable para capturar la información de la búsqueda
     const [searchTerm, setSearchTerm] = useState('');
+    // Variable para validar si es su "primera vez" en la página
     const [showWelcomeMessage, setShowWelcomeMessage] = useState(false);
+    //Variables para manejar la visibilidad del navbar según su scroll
+    const [isVisible, setIsVisible] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
+    //Variables para manejar la redirección
     const navigate = useNavigate();
 
+    // Función para validar si es su "primera vez" en la página
     useEffect(() => {
         const hasVisited = localStorage.getItem('hasVisited');
         if (!hasVisited) {
@@ -19,26 +26,43 @@ function SearchBar() {
         }
     }, []);
 
+    // Función para manejar la acción la búsqueda
     const handleSearch = () => {
         if (searchTerm.trim()) {
             navigate(`/items?search=${encodeURIComponent(searchTerm)}`);
         }
     };
-
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const handleKeyDown = (e: any) => {
+    // Función para manejar laacción de ENTER en el teclado y ejecute la búsqueda
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
             handleSearch();
         }
     };
 
+    // Función para manejar la visibilidad del mensaje de bienvenida
     const closeWelcomeMessage = () => {
         setShowWelcomeMessage(false);
     };
 
-    return (
-        <div className="navbar">
+    // Función para manejar la visibilidad del navbar según su scroll
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > lastScrollY && currentScrollY > 50) {
+                setIsVisible(false);
+            } else {
+                setIsVisible(true);
+            }
+            setLastScrollY(currentScrollY);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [lastScrollY]);
 
+    return (
+        <div className={`navbar ${isVisible ? 'visible' : 'hidden'}`}>
             <div className="content">
                 <img
                     src={LogoMeli}
@@ -69,10 +93,9 @@ function SearchBar() {
                         </div>
                     )}
                 </div>
-
             </div>
         </div>
-    )
+    );
 }
 
-export default SearchBar
+export default SearchBar;

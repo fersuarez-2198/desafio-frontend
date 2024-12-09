@@ -6,6 +6,19 @@
   background-color: $yellowMeli;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+
+  &.hidden {
+    transform: translateY(-100%); /* Ocultar hacia arriba */
+  }
+
+  &.visible {
+    transform: translateY(0); /* Mostrar */
+  }
 
   .content {
     margin: 8px 0;
@@ -105,7 +118,6 @@
   }
 }
 
-// Media Queries
 @media (max-width: 1249px) {
   .content {
     width: 90%;

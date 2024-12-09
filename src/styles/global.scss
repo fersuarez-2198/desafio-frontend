@@ -43,5 +43,32 @@ body {
   overflow: visible;
   width: 100%;
   justify-content: center;
-  align-items: center;
+}
+
+.navegacion {
+  display: flex;
+  margin-bottom: 10px;
+  .breadcrumb {
+    font-family: "Proxima Nova Light", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: $txtInfoBlack;
+    padding-left: 10px;
+    margin: 0;
+    border-left: 1px solid rgb(194, 194, 194);
+  }
+  a {
+    font-family: "Proxima Nova Light", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #3483fa;
+    margin: 0 10px 0 0;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 1249px) {
+  .navegacion {
+    padding: 0 24px;
+  }
 }

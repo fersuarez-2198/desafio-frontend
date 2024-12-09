@@ -1,0 +1,212 @@
+@import "../../styles/variables.scss";
+
+.card-container {
+  max-width: 1215px;
+  width: 100%;
+  margin: 0px auto 30px auto;
+
+  .card {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #e6e6e6;
+    padding: 0 24px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-top: 24px;
+    .card-first {
+      display: flex;
+      .card-details-mobile {
+        display: none;
+      }
+      .card-images {
+        display: flex;
+        flex-direction: column;
+        margin: 0 24px;
+        max-height: 500px;
+        overflow: auto;
+
+        &::-webkit-scrollbar {
+          width: 8px; // Ancho de la barra
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: #ccc;
+          border-radius: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+          background: $bgdWeb;
+        }
+
+        img {
+          width: 50px;
+          height: 50px;
+          margin-bottom: 8px;
+          border: 1px solid #ccc;
+          cursor: pointer;
+          transition: border 0.3s;
+          border-radius: 4px;
+          object-fit: contain;
+          &.selected {
+            border: 2px solid $blueSelected;
+          }
+        }
+      }
+
+      .card-image-big {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          max-width: 100%;
+          max-height: 500px;
+          height: auto;
+          min-height: 500px;
+          min-width: 500px;
+          object-fit: contain;
+        }
+      }
+
+      .card-details {
+        flex: 1;
+        padding: 24px 24px 0px 48px;
+        .condition {
+          font-family: "Proxima Nova Light", Arial, sans-serif;
+          font-size: 15px;
+          font-weight: 300;
+          color: $txtInfoBlack;
+          margin: 28px 0;
+        }
+        h1 {
+          font-family: "Proxima Nova Regular", Arial, sans-serif;
+          font-size: 22px;
+          font-weight: 600;
+          color: $txtNormal;
+          margin-bottom: 28px;
+        }
+
+        .price {
+          font-family: "Proxima Nova Regular", Arial, sans-serif;
+          font-size: 36px;
+          font-weight: 400;
+          color: $txtNormal;
+          margin: 0;
+        }
+
+        .cuotas {
+          font-family: "Proxima Nova Light", Arial, sans-serif;
+          font-size: 18px;
+          font-weight: 300;
+          color: $txtLightGreen;
+          margin: 0px 11px 28px 0px;
+        }
+
+        .envio {
+          font-family: "Proxima Nova Light", Arial, sans-serif;
+          font-size: 18px;
+          font-weight: 600;
+          color: $txtLightGreen;
+          margin-bottom: 28px;
+        }
+
+        .attribute {
+          font-family: "Proxima Nova Light", Arial, sans-serif;
+          font-size: 18px;
+          font-weight: 300;
+          color: $txtInfoBlack;
+        }
+      }
+    }
+
+    .card-description {
+      width: 100%;
+      margin: 28px 0;
+      border-top: 1px solid $bgdWeb;
+      h2 {
+        font-family: "Proxima Nova Regular", Arial, sans-serif;
+        font-size: 22px;
+        font-weight: 600;
+        color: $txtInfoBlack;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-family: "Proxima Nova Regular", Arial, sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        color: $txtInfoBlack;
+        margin-bottom: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1249px) {
+  .card-container {
+    width: 100vw;
+    .card {
+      .card-first {
+        display: contents;
+        .card-images {
+          display: flex;
+          flex-direction: column;
+          margin: 0 24px;
+          max-height: 500px;
+          width: 85px;
+          overflow: auto;
+        }
+        .card-image-big {
+          img {
+            max-width: 100%;
+            max-height: 200px;
+            height: auto;
+            min-height: 200px;
+            min-width: 200px;
+            object-fit: contain;
+          }
+        }
+        .card-details {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 502px) {
+  .card-container {
+    .card {
+      .card-first {
+        .card-details-mobile {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 16px;
+
+          .condition {
+            font-family: "Proxima Nova Light", Arial, sans-serif;
+            font-size: 15px;
+            font-weight: 300;
+            color: $txtInfoBlack;
+            margin: 0;
+          }
+
+          h1 {
+            font-family: "Proxima Nova Regular", Arial, sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: $txtNormal;
+            margin: 8px 0;
+          }
+        }
+        .card-details {
+          .condition,
+          h1 {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

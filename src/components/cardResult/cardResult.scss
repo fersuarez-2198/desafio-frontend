@@ -18,7 +18,7 @@
       img {
         width: 259px;
         height: 250px;
-        object-fit: contain;
+        object-fit: scale-down;
         border-radius: 4px;
       }
     }
@@ -43,7 +43,7 @@
       font-size: 14px;
       font-weight: 300;
       color: $txtLightGray;
-      margin: 0;
+      margin-bottom: 25px;
     }
 
     &-infoprice {
@@ -108,6 +108,7 @@
         flex: 1;
         display: flex;
         flex-direction: column;
+        max-width: 156px;
       }
 
       &-title {
@@ -155,18 +156,13 @@
 
       &-image {
         margin-right: 24px;
-        img {
-          width: 259px;
-          height: 250px;
-          object-fit: contain;
-          border-radius: 4px;
-        }
       }
 
       &-content {
         flex: 1;
         display: flex;
         flex-direction: column;
+        margin-bottom: 25px;
       }
 
       &-title {

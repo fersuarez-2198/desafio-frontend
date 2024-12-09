@@ -1,5 +1,7 @@
 import './cardResult.scss';
+import { useNavigate } from 'react-router-dom';
 
+//Interface para la estructura de la card
 interface Product {
     id: string;
     title: string;
@@ -10,13 +12,16 @@ interface Product {
     seller: { id: number; nickname: string };
     condition: string;
 }
-
+//Interface para la estructura de la card
 interface ResultSearchProps {
     data: Product[];
 }
 
 function ResultSearch({ data }: ResultSearchProps) {
+    //Función para manejar el redireccionamiento
+    const navigate = useNavigate();
 
+    //Función para formatear el valor
     const formatCurrency = (value: number): string => {
         return new Intl.NumberFormat('es-CO', {
             style: 'currency',
@@ -25,10 +30,15 @@ function ResultSearch({ data }: ResultSearchProps) {
         }).format(value);
     };
 
+    // Función para manejar el clic en una card
+    const handleCardClick = (id: string) => {
+        navigate(`/items/${id}`);
+    };
+
     return (
         <div className="card-container">
             {data.map((product) => (
-                <div key={product.id} className="card">
+                <div key={product.id} className="card" onClick={() => handleCardClick(product.id)}>
                     <div className="card-image">
                         <img
                             src={product.thumbnail}
