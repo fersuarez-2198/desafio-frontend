@@ -67,6 +67,45 @@ body {
   }
 }
 
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  background: #f8f8f8;
+}
+
+.pagination-button {
+  font-family: "Proxima Nova Regular", Arial, sans-serif;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+.pagination-button.active {
+  font-family: "Proxima Nova Regular", Arial, sans-serif;
+  background-color: white;
+  color: $txtNormal;
+  border: 1px solid $blueSelected;
+  border-radius: 4px;
+  width: 28px;
+  height: 28px;
+}
+
+.pagination-button:hover:not(.active) {
+  background-color: #e0e0e0;
+}
+
+button.control-button {
+  font-family: "Proxima Nova Regular", Arial, sans-serif;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+}
+
 @media (max-width: 1249px) {
   .navegacion {
     padding: 0 24px;
