@@ -1,0 +1,137 @@
+@import "../../styles/variables.scss";
+
+.navbar {
+  display: flex;
+  width: 100%;
+  background-color: $yellowMeli;
+  justify-content: center;
+  align-items: center;
+
+  .content {
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+
+    .logoMeli {
+      height: 35px;
+      margin-right: 34px;
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      width: 100%;
+
+      .search-input {
+        flex: 1;
+        height: 35px;
+        border: 1px solid $bgdWeb;
+        font-weight: 400;
+        padding-left: 15px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+        width: 100%;
+        font-family: "Proxima Nova Light", Arial, sans-serif;
+        font-weight: bold;
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .search-button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: none;
+        cursor: pointer;
+        height: 100%;
+        width: 75px;
+        background-color: white;
+        border: 1px solid #ebebeb;
+        border-left: none;
+        &::before {
+          content: "";
+          display: block;
+          height: 20px;
+          border-left: 1px solid $bgdWeb;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+        }
+
+        .searchIcon {
+          width: 20px;
+          display: flex;
+          margin: auto;
+        }
+      }
+    }
+  }
+
+  .welcome-message {
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    background-color: #007bff;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+
+    .welcome-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      span {
+        font-weight: bold;
+      }
+
+      .close-button {
+        background: none;
+        border: none;
+        color: #fff;
+        font-weight: bold;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    }
+
+    p {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// Media Queries
+@media (max-width: 1249px) {
+  .content {
+    width: 90%;
+
+    .input-wrapper {
+      width: 100%;
+      .search-input {
+        font-size: 12px;
+      }
+      .search-button {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 1250px) {
+  .content {
+    width: 1200px;
+
+    .input-wrapper {
+      width: 1018px;
+
+      .search-input {
+        font-size: 16px;
+      }
+    }
+  }
+}

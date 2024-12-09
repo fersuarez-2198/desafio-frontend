@@ -1,0 +1,225 @@
+@import "../../styles/variables.scss";
+
+.card-container {
+  max-width: 1215px;
+  width: 100%;
+  .card {
+    display: flex;
+    border: 1px solid #e6e6e6;
+    padding: 12px 12px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0;
+
+    &-image {
+      margin-right: 24px;
+      display: flex;
+      align-items: center;
+      img {
+        width: 259px;
+        height: 250px;
+        object-fit: contain;
+        border-radius: 4px;
+      }
+    }
+
+    &-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-title {
+      font-family: "Proxima Nova Regular", Arial, sans-serif;
+      font-size: 20px;
+      font-weight: 300;
+      color: $txtNormal;
+      margin: 30px 0 6px;
+    }
+
+    &-seller,
+    &-condition {
+      font-family: "Proxima Nova Regular", Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: $txtLightGray;
+      margin: 0;
+    }
+
+    &-infoprice {
+      margin: 25px 0;
+      .card-price {
+        font-family: "Proxima Nova Bold", Arial, sans-serif;
+        font-size: 24px;
+        font-weight: 400;
+        color: $txtNormal;
+        margin: 0;
+      }
+
+      .card-regular-price {
+        font-family: "Proxima Nova Light", Arial, sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        color: $txtNormal;
+        margin: 0;
+      }
+
+      .card-cuotas {
+        font-family: "Proxima Nova Light", Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: $txtLightGreen;
+        margin: 0;
+      }
+    }
+
+    &-envio {
+      font-family: "Proxima Nova Regular", Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: $txtLightGreen;
+      margin: 25px 0;
+    }
+  }
+}
+
+// Media Queries
+@media (max-width: 1249px) {
+  .card-container {
+    max-width: 1215px;
+    width: 100%;
+    .card {
+      display: flex;
+      border: 1px solid #e6e6e6;
+      padding: 12px 12px 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin: 0;
+
+      &-image {
+        margin-right: 24px;
+        img {
+          width: 160px;
+          height: 192px;
+        }
+      }
+
+      &-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      &-title {
+        font-size: 14px;
+      }
+
+      &-seller,
+      &-condition {
+        font-size: 12px;
+      }
+
+      &-infoprice {
+        .card-price {
+          font-size: 20px;
+        }
+
+        .card-regular-price,
+        .card-cuotas {
+          font-size: 12px;
+        }
+      }
+
+      &-envio {
+        font-family: "Proxima Nova Regular", Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        color: $txtLightGreen;
+        margin: 25px 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 1250px) {
+  .card-container {
+    max-width: 1215px;
+    width: 100%;
+    .card {
+      display: flex;
+      border: 1px solid #e6e6e6;
+      padding: 12px 12px 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin: 0;
+
+      &-image {
+        margin-right: 24px;
+        img {
+          width: 259px;
+          height: 250px;
+          object-fit: contain;
+          border-radius: 4px;
+        }
+      }
+
+      &-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      &-title {
+        font-family: "Proxima Nova Regular", Arial, sans-serif;
+        font-size: 20px;
+        font-weight: 300;
+        color: $txtNormal;
+        margin: 30px 0 6px;
+      }
+
+      &-seller,
+      &-condition {
+        font-family: "Proxima Nova Regular", Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 300;
+        color: $txtLightGray;
+        margin: 0;
+      }
+
+      &-infoprice {
+        margin: 25px 0;
+        .card-price {
+          font-family: "Proxima Nova Bold", Arial, sans-serif;
+          font-size: 24px;
+          font-weight: 400;
+          color: $txtNormal;
+          margin: 0;
+        }
+
+        .card-regular-price {
+          font-family: "Proxima Nova Light", Arial, sans-serif;
+          font-size: 12px;
+          font-weight: 400;
+          color: $txtNormal;
+          margin: 0;
+        }
+
+        .card-cuotas {
+          font-family: "Proxima Nova Light", Arial, sans-serif;
+          font-size: 14px;
+          font-weight: 400;
+          color: $txtLightGreen;
+          margin: 0;
+        }
+      }
+
+      &-envio {
+        font-family: "Proxima Nova Regular", Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        color: $txtLightGreen;
+        margin: 25px 0;
+      }
+    }
+  }
+}
